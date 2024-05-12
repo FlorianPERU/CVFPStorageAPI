@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CVFPAPI", "CVFPAPI\CVFPAPI.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CVFPDataAccess", "CVFPDataAccess\CVFPDataAccess.csproj", "{9EC308DC-B566-4C52-A5C0-1582DA000922}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CVFPServices", "CVFPDataAccess2\CVFPServices.csproj", "{08EE3242-FE2B-4BF4-8926-369214E17771}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CVFPServices", "CVFPServices\CVFPServices.csproj", "{A9B98C8E-060F-4534-B9CB-76D2FBEE6AB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{9EC308DC-B566-4C52-A5C0-1582DA000922}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EC308DC-B566-4C52-A5C0-1582DA000922}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EC308DC-B566-4C52-A5C0-1582DA000922}.Release|Any CPU.Build.0 = Release|Any CPU
-		{08EE3242-FE2B-4BF4-8926-369214E17771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{08EE3242-FE2B-4BF4-8926-369214E17771}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{08EE3242-FE2B-4BF4-8926-369214E17771}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{08EE3242-FE2B-4BF4-8926-369214E17771}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9B98C8E-060F-4534-B9CB-76D2FBEE6AB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9B98C8E-060F-4534-B9CB-76D2FBEE6AB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9B98C8E-060F-4534-B9CB-76D2FBEE6AB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9B98C8E-060F-4534-B9CB-76D2FBEE6AB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

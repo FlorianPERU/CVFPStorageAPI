@@ -9,9 +9,9 @@ namespace CVFPAPI.Controllers
     public class GetFirstCandidateController : ControllerBase
     {
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<GetFirstCandidateController> _logger;
         private readonly ICandidatesService _candidatesService;
-        public GetFirstCandidateController(ILogger<WeatherForecastController> logger, ICandidatesService candidatesService)
+        public GetFirstCandidateController(ILogger<GetFirstCandidateController> logger, ICandidatesService candidatesService)
         {
             _logger = logger;
             _candidatesService = candidatesService;

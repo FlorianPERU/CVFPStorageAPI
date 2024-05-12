@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CVFPDataAccess2\CVFPServices.csproj" />
+    <ProjectReference Include="..\CVFPServices\CVFPServices.csproj" />
   </ItemGroup>
 
 </Project>

@@ -21,7 +21,7 @@ namespace CVFPDataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("CVFPDataAccess2.Candidate", b =>
+            modelBuilder.Entity("CVFPDataAccess.Models.Candidate", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -52,8 +52,8 @@ namespace CVFPDataAccess.Migrations
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<bool>("HasOwnVehicle")
                         .HasColumnType("bit");

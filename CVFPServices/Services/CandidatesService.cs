@@ -24,7 +24,5 @@ namespace CVFPServices.Services
         {
             return _candidatesRepository.GetFirstCandidate().ToDTO();
         }
-
-
     }
 }
