@@ -1,5 +1,5 @@
 ﻿using CVFPDataAccess.Models;
-using CVFPDataAccess.Repositories;
+using CVFPDataAccess.Repositories.Candidates;
 using CVFPServices.DTOs;
 using CVFPServices.Extensions;
 using CVFPServices.Services.Interfaces;

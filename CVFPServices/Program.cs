@@ -4,11 +4,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-using CVFPDataAccess.Repositories;
+using CVFPDataAccess.Repositories.Candidates;
 
 
 var services = new ServiceCollection();
-services.AddSingleton<ICandidatesRepository, CandidatesRepository>();
+//services.AddSingleton<ICandidatesRepository, CandidatesRepository>();
 
         //ConfigureServices(services);
 

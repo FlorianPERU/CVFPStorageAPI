@@ -46,6 +46,8 @@ namespace CVFPDataAccess.Models
         [Required]
         [MaxLength(100)]
         public string DesiredJobType { get; set; }
+        public ICollection<Formation> Formations { get; set; }
+        public ICollection<Certification> Certifications { get; set; }
 
     }
 

@@ -1,7 +1,9 @@
 //using CVFPDataAccess.Data;
 
 using CVFPDataAccess.Data;
-using CVFPDataAccess.Repositories;
+using CVFPDataAccess.Repositories.Candidates;
+using CVFPDataAccess.Repositories.Certifications;
+using CVFPDataAccess.Repositories.Formations;
 using CVFPServices.Services;
 using CVFPServices.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +19,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ICandidatesService, CandidatesService>();
 builder.Services.AddScoped<ICandidatesRepository, CandidatesRepository>();
+builder.Services.AddScoped<ICertificationsFormationsService, CertificationsFormationsService>();
+builder.Services.AddScoped<ICertificationsRepository, CertificationsRepository>();
+builder.Services.AddScoped<IFormationsRepository, FormationsRepository>();
 
 builder.Configuration.AddJsonFile("appsettings.json",
         optional: true,

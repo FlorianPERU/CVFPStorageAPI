@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CVFPDataAccess.Repositories
+namespace CVFPDataAccess.Repositories.Candidates
 {
     public interface ICandidatesRepository
     {
-        Candidate GetFirstCandidate();
+        public Candidate GetFirstCandidate();
     }
 }

@@ -1,18 +1,13 @@
 ﻿using CVFPDataAccess.Data;
 using CVFPDataAccess.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CVFPDataAccess.Repositories
+namespace CVFPDataAccess.Repositories.Candidates
 {
     public class CandidatesRepository : ICandidatesRepository
     {
         private readonly CVContext _context;
 
-        public CandidatesRepository(CVContext cVContext) 
+        public CandidatesRepository(CVContext cVContext)
         {
             _context = cVContext;
         }
