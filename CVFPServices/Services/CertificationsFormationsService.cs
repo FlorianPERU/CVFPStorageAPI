@@ -28,8 +28,8 @@ namespace CVFPServices.Services
         {
             return new CertificationsFormationsDTO()
             {
-                CertificationDTOs = _certificationsRepository.GetCertificationsByUserIdCandidate(userId).Select(c => c.ToDTO()).ToList(),
-                FormationDTOs = _formationsRepository.GetFormationsByUserIdCandidate(userId).Select(c => c.ToDTO()).ToList()
+                Certifications = _certificationsRepository.GetCertificationsByUserIdCandidate(userId).Select(c => c.ToDTO()).ToList(),
+                Formations = _formationsRepository.GetFormationsByUserIdCandidate(userId).Select(c => c.ToDTO()).ToList()
             };
         }
     }

@@ -4,6 +4,8 @@ using CVFPDataAccess.Data;
 using CVFPDataAccess.Repositories.Candidates;
 using CVFPDataAccess.Repositories.Certifications;
 using CVFPDataAccess.Repositories.Formations;
+using CVFPDataAccess.Repositories.HardSkills;
+using CVFPDataAccess.Repositories.SoftSkills;
 using CVFPServices.Services;
 using CVFPServices.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -17,17 +19,31 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+#region Injection
+
+#region Candidates
 builder.Services.AddScoped<ICandidatesService, CandidatesService>();
 builder.Services.AddScoped<ICandidatesRepository, CandidatesRepository>();
+#endregion
+#region Certifications Formations
 builder.Services.AddScoped<ICertificationsFormationsService, CertificationsFormationsService>();
 builder.Services.AddScoped<ICertificationsRepository, CertificationsRepository>();
 builder.Services.AddScoped<IFormationsRepository, FormationsRepository>();
+#endregion
+
+#region Candidate Skills
+builder.Services.AddScoped<ICandidateSkillsService, CandidateSkillsService>();
+builder.Services.AddScoped<ISoftSkillsRepository, SoftSkillsRepository>();
+builder.Services.AddScoped<IHardSkillsRepository, HardSkillsRepository>();
+#endregion
 
 builder.Configuration.AddJsonFile("appsettings.json",
         optional: true,
         reloadOnChange: true);
 builder.Services.AddDbContext<CVContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+#endregion
+
 //builder.Services.AddDbContext<CVContext>(options =>
 //    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 var app = builder.Build();

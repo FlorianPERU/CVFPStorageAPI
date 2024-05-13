@@ -1,5 +1,6 @@
 ﻿using CVFPDataAccess.Data;
 using CVFPDataAccess.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,12 @@ namespace CVFPDataAccess.Repositories.HardSkills
 
         public ICollection<HardSkill> GetHardSkillsByUserIdCandidate(int userId)
         {
-            return _context.AssociationCandidatesHardSkills.Where(acss => acss.CandidateId == userId).Select(ss => ss.HardSkill).ToList();
+            return _context.AssociationCandidatesHardSkills
+                .Where(acss => acss.CandidateId == userId)
+                .Include(chs => chs.HardSkill)
+                .ThenInclude(hs => hs.HardSkillType)
+                .Include(hs => hs.HardSkill.AssociationCandidateHardSkills)
+                .Select(ss => ss.HardSkill).ToList();
         }
     }
 }

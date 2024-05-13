@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace CVFPServices.DTOs
 {
-    public class CertificationsFormationsDTO
+    public class CandidateSkillsDTO
     {
-        public List<CertificationDTO> Certifications { get; set; }
-        public List<FormationDTO> Formations { get; set; }
+        public List<SoftSkillDTO> SoftSkills { get; set; }
+        public List<HardSkillDTO> HardSkills { get; set; }
     }
 }
