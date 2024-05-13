@@ -7,16 +7,13 @@ using System.Threading.Tasks;
 
 namespace CVFPDataAccess.Models
 {
-    public class SoftSkill
+    public class HardSkillType
     {
         [Key]
         public int Id { get; set; }
         [Required]
-        [MaxLength(50)]
+        [MaxLength(100)]
         public string Name { get; set; }
-        [Required]
-        [MaxLength(255)]
-        public string LogoLink { get; set; }
-        public ICollection<AssociationCandidateSoftSkill> AssociationCandidateSoftSkills { get; set; }
+        public ICollection<HardSkill> HardSkills { get; set; }
     }
 }

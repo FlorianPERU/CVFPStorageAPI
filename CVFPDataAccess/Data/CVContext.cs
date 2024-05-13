@@ -20,6 +20,8 @@ namespace CVFPDataAccess.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+            #region Candidate
             // Configuration de la relation entre Candidate et Certification
             modelBuilder.Entity<Candidate>()
                 .HasMany(u => u.Certifications)
@@ -32,6 +34,8 @@ namespace CVFPDataAccess.Data
                 .WithOne(c => c.Candidate)
                 .HasForeignKey(f => f.CandidateId);
 
+            #endregion
+            #region AssociationCandidateSoftSkill
             // Clé composite pour la table AssociationCandidateSoftSkill
             modelBuilder.Entity<AssociationCandidateSoftSkill>()
                 .HasKey(a => new { a.CandidateId, a.SoftSkillId });
@@ -47,6 +51,31 @@ namespace CVFPDataAccess.Data
                 .HasOne(u => u.SoftSkill)
                 .WithMany(c => c.AssociationCandidateSoftSkills)
                 .HasForeignKey(f => f.SoftSkillId);
+            #endregion
+            #region AssociationCandidateHardSkill 
+            // Clé composite pour la table AssociationCandidateHardSkill
+            modelBuilder.Entity<AssociationCandidateHardSkill>()
+                .HasKey(a => new { a.CandidateId, a.HardSkillId });
+
+            // Configuration de la relation entre AssociationCandidateHardSkill et Candidate
+            modelBuilder.Entity<AssociationCandidateHardSkill>()
+                .HasOne(u => u.Candidate)
+                .WithMany(c => c.AssociationCandidateHardSkills)
+                .HasForeignKey(f => f.CandidateId);
+
+            // Configuration de la relation entre AssociationCandidateHardSkill et HardSkill
+            modelBuilder.Entity<AssociationCandidateHardSkill>()
+                .HasOne(u => u.HardSkill)
+                .WithMany(c => c.AssociationCandidateHardSkills)
+                .HasForeignKey(f => f.HardSkillId);
+            #endregion
+            #region HardSkillType
+            // Configuration de la relation entre HardSkillType et HardSkills
+            modelBuilder.Entity<HardSkillType>()
+                .HasMany(u => u.HardSkills)
+                .WithOne(c => c.HardSkillType)
+                .HasForeignKey(f => f.HardSkillTypeId);
+            #endregion
         }
 
         public DbSet<Candidate> Candidates { get; set; }
@@ -54,5 +83,7 @@ namespace CVFPDataAccess.Data
         public DbSet<Formation> Formations { get; set; }
         public DbSet<AssociationCandidateSoftSkill> AssociationCandidatesSoftSkills { get; set; }
         public DbSet<SoftSkill> SoftSkills { get; set; }
+        public DbSet<AssociationCandidateHardSkill> AssociationCandidatesHardSkills { get; set; }
+        public DbSet<HardSkill> HardSkills { get; set; }
     }
 }
