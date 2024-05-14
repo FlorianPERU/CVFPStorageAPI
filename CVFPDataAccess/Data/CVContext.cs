@@ -33,7 +33,6 @@ namespace CVFPDataAccess.Data
                 .HasMany(u => u.Formations)
                 .WithOne(c => c.Candidate)
                 .HasForeignKey(f => f.CandidateId);
-
             #endregion
             #region AssociationCandidateSoftSkill
             // Clé composite pour la table AssociationCandidateSoftSkill
@@ -110,6 +109,33 @@ namespace CVFPDataAccess.Data
                 .WithMany(c => c.AssociationCandidateLanguages)
                 .HasForeignKey(f => f.LanguageId);
             #endregion
+            #region Experience 
+            // Configuration de la relation entre Experience et Candidate
+            modelBuilder.Entity<Experience>()
+                .HasOne(e => e.Candidate)
+                .WithMany(c => c.Experiences)
+                .HasForeignKey(e => e.CandidateId);
+
+            // Configuration de la relation auto-référentielle entre Experience et SubExperiences
+            modelBuilder.Entity<Experience>()
+                .HasMany(e => e.SubExperiences)
+                .WithOne(e => e.ParentExperience)
+                .HasForeignKey(e => e.ParentExperienceId);
+            #endregion
+            #region Job 
+            // Configuration de la relation entre Job et Experiences
+            modelBuilder.Entity<Job>()
+                .HasMany(u => u.Experiences)
+                .WithOne(c => c.Job)
+                .HasForeignKey(f => f.JobId);
+            #endregion
+            #region ContractType 
+            // Configuration de la relation entre ContractType et Experiences
+            modelBuilder.Entity<ContractType>()
+                .HasMany(u => u.Experiences)
+                .WithOne(c => c.ContractType)
+                .HasForeignKey(f => f.ContractTypeId);
+            #endregion
         }
 
         public DbSet<Candidate> Candidates { get; set; }
@@ -123,5 +149,8 @@ namespace CVFPDataAccess.Data
         public DbSet<Hobbie> Hobbies { get; set; }
         public DbSet<AssociationCandidateLanguage> AssociationCandidateLanguages { get; set; }
         public DbSet<Language> Languages { get; set; }
+        public DbSet<Experience> Experiences { get; set; }
+        public DbSet<Job> Jobs { get; set; }
+        public DbSet<ContractType> ContractTypes { get; set; }
     }
 }

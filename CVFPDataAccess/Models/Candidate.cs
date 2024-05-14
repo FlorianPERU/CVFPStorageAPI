@@ -48,6 +48,7 @@ namespace CVFPDataAccess.Models
         public string DesiredJobType { get; set; }
         public ICollection<Formation> Formations { get; set; }
         public ICollection<Certification> Certifications { get; set; }
+        public ICollection<Experience> Experiences { get; set; }
         public ICollection<AssociationCandidateSoftSkill> AssociationCandidateSoftSkills { get; set; }
         public ICollection<AssociationCandidateHardSkill> AssociationCandidateHardSkills { get; set; }
         public ICollection<AssociationCandidateHobbie> AssociationCandidateHobbies { get; set; }
