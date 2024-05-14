@@ -7,6 +7,7 @@ using CVFPDataAccess.Repositories.Experiences;
 using CVFPDataAccess.Repositories.Formations;
 using CVFPDataAccess.Repositories.HardSkills;
 using CVFPDataAccess.Repositories.Hobbies;
+using CVFPDataAccess.Repositories.JobTasks;
 using CVFPDataAccess.Repositories.Languages;
 using CVFPDataAccess.Repositories.SoftSkills;
 using CVFPServices.Services;
@@ -53,6 +54,11 @@ builder.Services.AddScoped<ILanguagesRepository, LanguagesRepository>();
 #region Candidate Experiences
 builder.Services.AddScoped<IExperiencesService, ExperiencesService>();
 builder.Services.AddScoped<IExperiencesRepository, ExperiencesRepository>();
+#endregion
+
+#region Candidate JobTasks
+builder.Services.AddScoped<IJobTasksService, JobTasksService>();
+builder.Services.AddScoped<IJobTasksRepository, JobTasksRepository>();
 #endregion
 
 builder.Configuration.AddJsonFile("appsettings.json",

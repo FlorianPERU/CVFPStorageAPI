@@ -121,6 +121,12 @@ namespace CVFPDataAccess.Data
                 .HasMany(e => e.SubExperiences)
                 .WithOne(e => e.ParentExperience)
                 .HasForeignKey(e => e.ParentExperienceId);
+
+            // Configuration de la relation auto-référentielle entre Experience et JobTasks
+            modelBuilder.Entity<Experience>()
+                .HasMany(e => e.JobTasks)
+                .WithOne(e => e.Experience)
+                .HasForeignKey(e => e.ExperienceId);
             #endregion
             #region Job 
             // Configuration de la relation entre Job et Experiences
@@ -152,5 +158,6 @@ namespace CVFPDataAccess.Data
         public DbSet<Experience> Experiences { get; set; }
         public DbSet<Job> Jobs { get; set; }
         public DbSet<ContractType> ContractTypes { get; set; }
+        public DbSet<JobTask> JobTasks { get; set; }
     }
 }

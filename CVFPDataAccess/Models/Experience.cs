@@ -31,6 +31,7 @@ namespace CVFPDataAccess.Models
         public int? ParentExperienceId { get; set; }
         public Experience ParentExperience { get; set; }
         public ICollection<Experience> SubExperiences { get; set; }
+        public ICollection<JobTask> JobTasks { get; set; }
         public int CandidateId { get; set; }
         public virtual Candidate Candidate { get; set; }
     }
