@@ -6,6 +6,7 @@ using CVFPDataAccess.Repositories.Certifications;
 using CVFPDataAccess.Repositories.Formations;
 using CVFPDataAccess.Repositories.HardSkills;
 using CVFPDataAccess.Repositories.Hobbies;
+using CVFPDataAccess.Repositories.Languages;
 using CVFPDataAccess.Repositories.SoftSkills;
 using CVFPServices.Services;
 using CVFPServices.Services.Interfaces;
@@ -41,6 +42,11 @@ builder.Services.AddScoped<IHardSkillsRepository, HardSkillsRepository>();
 #region Candidate Hobbies
 builder.Services.AddScoped<ICandidateHobbiesService, CandidateHobbiesService>();
 builder.Services.AddScoped<IHobbiesRepository, HobbiesRepository>();
+#endregion
+
+#region Candidate Languages
+builder.Services.AddScoped<ICandidateLanguagesService, CandidateLanguagesService>();
+builder.Services.AddScoped<ILanguagesRepository, LanguagesRepository>();
 #endregion
 
 builder.Configuration.AddJsonFile("appsettings.json",

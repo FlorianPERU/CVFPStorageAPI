@@ -51,7 +51,7 @@ namespace CVFPDataAccess.Models
         public ICollection<AssociationCandidateSoftSkill> AssociationCandidateSoftSkills { get; set; }
         public ICollection<AssociationCandidateHardSkill> AssociationCandidateHardSkills { get; set; }
         public ICollection<AssociationCandidateHobbie> AssociationCandidateHobbies { get; set; }
-
+        public ICollection<AssociationCandidateLanguage> AssociationCandidateLanguages { get; set; }
     }
 
     public enum DrivingLicenseTypeEnum

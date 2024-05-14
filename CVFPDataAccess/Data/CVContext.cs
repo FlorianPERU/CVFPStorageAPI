@@ -93,6 +93,23 @@ namespace CVFPDataAccess.Data
                 .WithMany(c => c.AssociationCandidateHobbies)
                 .HasForeignKey(f => f.HobbieId);
             #endregion
+            #region AssociationCandidateHardSkill 
+            // Clé composite pour la table AssociationCandidateLanguage
+            modelBuilder.Entity<AssociationCandidateLanguage>()
+                .HasKey(a => new { a.CandidateId, a.LanguageId });
+
+            // Configuration de la relation entre AssociationCandidateLanguage et Candidate
+            modelBuilder.Entity<AssociationCandidateLanguage>()
+                .HasOne(u => u.Candidate)
+                .WithMany(c => c.AssociationCandidateLanguages)
+                .HasForeignKey(f => f.CandidateId);
+
+            // Configuration de la relation entre AssociationCandidateLanguage et Language
+            modelBuilder.Entity<AssociationCandidateLanguage>()
+                .HasOne(u => u.Language)
+                .WithMany(c => c.AssociationCandidateLanguages)
+                .HasForeignKey(f => f.LanguageId);
+            #endregion
         }
 
         public DbSet<Candidate> Candidates { get; set; }
@@ -104,5 +121,7 @@ namespace CVFPDataAccess.Data
         public DbSet<HardSkill> HardSkills { get; set; }
         public DbSet<AssociationCandidateHobbie> AssociationCandidateHobbies { get; set; }
         public DbSet<Hobbie> Hobbies { get; set; }
+        public DbSet<AssociationCandidateLanguage> AssociationCandidateLanguages { get; set; }
+        public DbSet<Language> Languages { get; set; }
     }
 }
