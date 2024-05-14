@@ -50,6 +50,7 @@ namespace CVFPDataAccess.Models
         public ICollection<Certification> Certifications { get; set; }
         public ICollection<AssociationCandidateSoftSkill> AssociationCandidateSoftSkills { get; set; }
         public ICollection<AssociationCandidateHardSkill> AssociationCandidateHardSkills { get; set; }
+        public ICollection<AssociationCandidateHobbie> AssociationCandidateHobbies { get; set; }
 
     }
 
