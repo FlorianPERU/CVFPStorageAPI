@@ -17,7 +17,7 @@ namespace CVFPServices.Extensions
                 Id = candidate.Id,
                 FirstName = candidate.FirstName,
                 LastName = candidate.LastName,
-                Age = candidate.Age,
+                DateOfBirth = candidate.DateOfBirth,
                 DrivingLicenseType = candidate.DrivingLicenseType,
                 HasOwnVehicle = candidate.HasOwnVehicle,
                 PresentationSentence = candidate.PresentationSentence,

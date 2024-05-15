@@ -18,7 +18,7 @@ namespace CVFPDataAccess.Models
         [MaxLength(50)]
         public string LastName { get; set; }
         [Required]
-        public int Age { get; set; }
+        public DateTime DateOfBirth { get; set; }
         [Required]
         [EnumDataType(typeof(DrivingLicenseTypeEnum))]
         public DrivingLicenseTypeEnum DrivingLicenseType { get; set; }
