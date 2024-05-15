@@ -18,5 +18,6 @@ namespace CVFPDataAccess.Models
         [MaxLength(255)]
         public string LogoLink { get; set; }
         public ICollection<AssociationCandidateSoftSkill> AssociationCandidateSoftSkills { get; set; }
+        public ICollection<ExperienceSkill> ExperienceSkills { get; set; }
     }
 }

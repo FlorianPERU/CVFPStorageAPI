@@ -142,6 +142,29 @@ namespace CVFPDataAccess.Data
                 .WithOne(c => c.ContractType)
                 .HasForeignKey(f => f.ContractTypeId);
             #endregion
+            #region ExperienceSkill 
+            // Clé composite pour la table ExperienceSkill
+            modelBuilder.Entity<ExperienceSkill>()
+                .HasKey(a => new { a.ExperienceId, a.Position });
+
+            // Configuration de la relation entre ExperienceSkill et Experience
+            modelBuilder.Entity<ExperienceSkill>()
+                .HasOne(u => u.Experience)
+                .WithMany(c => c.ExperienceSkills)
+                .HasForeignKey(f => f.ExperienceId);
+
+            // Configuration de la relation entre ExperienceSkill et SoftSkill
+            modelBuilder.Entity<ExperienceSkill>()
+                .HasOne(u => u.SoftSkill)
+                .WithMany(c => c.ExperienceSkills)
+                .HasForeignKey(f => f.SoftSkillId);
+
+            // Configuration de la relation entre ExperienceSkill et HardSkill
+            modelBuilder.Entity<ExperienceSkill>()
+                .HasOne(u => u.HardSkill)
+                .WithMany(c => c.ExperienceSkills)
+                .HasForeignKey(f => f.HardSkillId);
+            #endregion
         }
 
         public DbSet<Candidate> Candidates { get; set; }
@@ -159,5 +182,6 @@ namespace CVFPDataAccess.Data
         public DbSet<Job> Jobs { get; set; }
         public DbSet<ContractType> ContractTypes { get; set; }
         public DbSet<JobTask> JobTasks { get; set; }
+        public DbSet<ExperienceSkill> ExperienceSkills { get; set; }
     }
 }

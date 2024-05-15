@@ -20,5 +20,6 @@ namespace CVFPDataAccess.Models
         public int HardSkillTypeId { get; set; }
         public HardSkillType HardSkillType { get; set; }
         public ICollection<AssociationCandidateHardSkill> AssociationCandidateHardSkills { get; set; }
+        public ICollection<ExperienceSkill> ExperienceSkills { get; set; }
     }
 }
