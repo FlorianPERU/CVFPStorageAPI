@@ -19,9 +19,9 @@ namespace CVFPAPI.Controllers
         }
 
         [HttpGet(Name = "GetExperienceSkills")]
-        public ICollection<ExperienceSkillDTO> Get(int userId)
+        public async Task<ICollection<ExperienceSkillDTO>> Get(int userId)
         {
-            return _experienceSkillsService.GetExperienceSkillsDTOByUserIdCandidate(userId);
+            return await _experienceSkillsService.GetExperienceSkillsDTOByUserIdCandidate(userId);
         }
     }
 }

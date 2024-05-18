@@ -9,7 +9,7 @@ namespace CVFPServices.Services.Interfaces
 {
     public interface ICertificationsFormationsService
     {
-        public CertificationsFormationsDTO GetCertificationsFormationsDTOByUserId(int userId);
+        public Task<CertificationsFormationsDTO> GetCertificationsFormationsDTOByUserId(int userId);
 
     }
 }

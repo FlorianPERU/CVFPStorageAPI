@@ -9,6 +9,6 @@ namespace CVFPDataAccess.Repositories.Candidates
 {
     public interface ICandidatesRepository
     {
-        public Candidate GetFirstCandidate();
+        public Task<Candidate> GetFirstCandidate();
     }
 }

@@ -18,14 +18,14 @@ namespace CVFPDataAccess.Repositories.Experiences
             _context = cVContext;
         }
 
-        public ICollection<Experience> GetExperiencesByUserIdCandidate(int userId)
+        public async Task<ICollection<Experience>> GetExperiencesByUserIdCandidate(int userId)
         {
-            return _context.Experiences
+            return await _context.Experiences
                 .Where(e => e.CandidateId == userId && e.ParentExperienceId == null)//get tree experiences
                 .Include(e => e.SubExperiences)
                 .Include(e => e.Job)
                 .Include(e => e.ContractType)
-                .ToList();
+                .ToListAsync();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using CVFPDataAccess.Repositories.HardSkills;
+﻿using CVFPDataAccess.Models;
+using CVFPDataAccess.Repositories.HardSkills;
 using CVFPDataAccess.Repositories.SoftSkills;
 using CVFPServices.DTOs;
 using CVFPServices.Extensions;
@@ -24,12 +25,14 @@ namespace CVFPServices.Services
             _hardSkillsRepository = hardSkillsRepository;
         }
 
-        public CandidateSkillsDTO GetCandidateSkillsDTOByUserId(int userId)
+        public async Task<CandidateSkillsDTO> GetCandidateSkillsDTOByUserId(int userId)
         {
+            var softSkills = await _softSkillsRepository.GetSoftSkillsByUserIdCandidate(userId);
+            var hardSkills = await _hardSkillsRepository.GetHardSkillsByUserIdCandidate(userId);
             return new CandidateSkillsDTO()
             {
-                SoftSkills = _softSkillsRepository.GetSoftSkillsByUserIdCandidate(userId).Select(c => c.ToDTO(userId)).ToList(),
-                HardSkills = _hardSkillsRepository.GetHardSkillsByUserIdCandidate(userId).Select(c => c.ToDTO(userId)).ToList()
+                SoftSkills = softSkills.Select(c => c.ToDTO(userId)).ToList(),
+                HardSkills = hardSkills.Select(c => c.ToDTO(userId)).ToList()
             };
         }
     }

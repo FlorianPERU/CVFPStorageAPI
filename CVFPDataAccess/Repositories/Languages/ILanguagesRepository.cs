@@ -9,6 +9,6 @@ namespace CVFPDataAccess.Repositories.Languages
 {
     public interface ILanguagesRepository
     {
-        public ICollection<Language> GetLanguagesByUserIdCandidate(int userId);
+        public Task<ICollection<Language>> GetLanguagesByUserIdCandidate(int userId);
     }
 }

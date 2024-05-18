@@ -18,14 +18,14 @@ namespace CVFPDataAccess.Repositories.Languages
             _context = cVContext;
         }
 
-        public ICollection<Language> GetLanguagesByUserIdCandidate(int userId)
+        public async Task<ICollection<Language>> GetLanguagesByUserIdCandidate(int userId)
         {
-            return _context.AssociationCandidateLanguages
+            return await _context.AssociationCandidateLanguages
                 .Where(ach => ach.CandidateId == userId)
                 .Include(chs => chs.Language)
                 .ThenInclude(hs => hs.AssociationCandidateLanguages)
                 .Select(ach => ach.Language)
-                .ToList();
+                .ToListAsync();
         }
     }
 }

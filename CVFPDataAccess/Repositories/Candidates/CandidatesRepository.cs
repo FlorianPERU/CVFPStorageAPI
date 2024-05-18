@@ -1,5 +1,6 @@
 ﻿using CVFPDataAccess.Data;
 using CVFPDataAccess.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CVFPDataAccess.Repositories.Candidates
 {
@@ -12,9 +13,9 @@ namespace CVFPDataAccess.Repositories.Candidates
             _context = cVContext;
         }
 
-        public Candidate GetFirstCandidate()
+        public async Task<Candidate> GetFirstCandidate()
         {
-            return _context.Candidates.First();
+            return await _context.Candidates.FirstAsync();
         }
     }
 }

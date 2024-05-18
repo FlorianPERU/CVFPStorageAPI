@@ -18,11 +18,11 @@ namespace CVFPDataAccess.Repositories.JobTasks
             _context = cVContext;
         }
 
-        public ICollection<JobTask> GetJobTasksByUserIdCandidate(int userId)
+        public async Task<ICollection<JobTask>> GetJobTasksByUserIdCandidate(int userId)
         {
-            return _context.JobTasks
+            return await _context.JobTasks
                 .Where(ach => ach.Experience.CandidateId == userId)
-                .ToList();
+                .ToListAsync();
         }
     }
 }

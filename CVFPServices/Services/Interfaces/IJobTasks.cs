@@ -9,7 +9,7 @@ namespace CVFPServices.Services.Interfaces
 {
     public interface IJobTasksService
     {
-        public ICollection<JobTaskDTO> GetJobTasksDTOByUserIdCandidate(int userId);
+        public Task<ICollection<JobTaskDTO>> GetJobTasksDTOByUserIdCandidate(int userId);
 
     }
 }

@@ -9,6 +9,6 @@ namespace CVFPDataAccess.Repositories.HardSkills
 {
     public interface IHardSkillsRepository
     {
-        public ICollection<HardSkill> GetHardSkillsByUserIdCandidate(int userId);
+        public Task<ICollection<HardSkill>> GetHardSkillsByUserIdCandidate(int userId);
     }
 }

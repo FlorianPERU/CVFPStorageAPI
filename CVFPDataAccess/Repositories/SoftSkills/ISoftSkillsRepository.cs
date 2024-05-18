@@ -9,6 +9,6 @@ namespace CVFPDataAccess.Repositories.SoftSkills
 {
     public interface ISoftSkillsRepository
     {
-        public ICollection<SoftSkill> GetSoftSkillsByUserIdCandidate(int userId);
+        public Task<ICollection<SoftSkill>> GetSoftSkillsByUserIdCandidate(int userId);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using CVFPDataAccess.Data;
 using CVFPDataAccess.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,11 +18,11 @@ namespace CVFPDataAccess.Repositories.ExperienceSkills
             _context = cVContext;
         }
 
-        public ICollection<ExperienceSkill> GetExperienceSkillsByUserIdCandidate(int userId)
+        public async Task<ICollection<ExperienceSkill>> GetExperienceSkillsByUserIdCandidate(int userId)
         {
-            return _context.ExperienceSkills
+            return await _context.ExperienceSkills
                 .Where(acss => acss.Experience.CandidateId == userId)
-                .ToList();
+                .ToListAsync();
         }
     }
 }

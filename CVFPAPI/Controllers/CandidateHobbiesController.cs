@@ -2,6 +2,7 @@ using CVFPServices.DTOs;
 using CVFPServices.Services;
 using CVFPServices.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualBasic;
 
 namespace CVFPAPI.Controllers
 {
@@ -19,9 +20,9 @@ namespace CVFPAPI.Controllers
         }
 
         [HttpGet(Name = "GetCandidateHobbies")]
-        public ICollection<CandidateHobbiesDTO> Get(int userId)
+        public async Task<ICollection<CandidateHobbiesDTO>> Get(int userId)
         {
-            return _candidateHobbiesService.GetHobbiesDTOByUserId(userId);
+            return await _candidateHobbiesService.GetHobbiesDTOByUserIdAsync(userId);
         }
     }
 }

@@ -18,13 +18,13 @@ namespace CVFPDataAccess.Repositories.SoftSkills
             _context = cVContext;
         }
 
-        public ICollection<SoftSkill> GetSoftSkillsByUserIdCandidate(int userId)
+        public async Task<ICollection<SoftSkill>> GetSoftSkillsByUserIdCandidate(int userId)
         {
-            return _context.AssociationCandidatesSoftSkills
+            return await _context.AssociationCandidatesSoftSkills
                 .Where(acss => acss.CandidateId == userId)
                 .Include(chs => chs.SoftSkill)
                 .ThenInclude(hs => hs.AssociationCandidateSoftSkills)
-                .Select(ss => ss.SoftSkill).ToList();
+                .Select(ss => ss.SoftSkill).ToListAsync();
         }
     }
 }

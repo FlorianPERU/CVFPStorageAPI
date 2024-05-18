@@ -19,9 +19,9 @@ namespace CVFPAPI.Controllers
         }
 
         [HttpGet(Name = "GetJobTasks")]
-        public ICollection<JobTaskDTO> Get(int userId)
+        public async Task<ICollection<JobTaskDTO>> Get(int userId)
         {
-            return _jobTasksService.GetJobTasksDTOByUserIdCandidate(userId);
+            return await _jobTasksService.GetJobTasksDTOByUserIdCandidate(userId);
         }
     }
 }

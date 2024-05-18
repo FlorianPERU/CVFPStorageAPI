@@ -9,7 +9,7 @@ namespace CVFPServices.Services.Interfaces
 {
     public interface IExperienceSkillsService
     {
-        public ICollection<ExperienceSkillDTO> GetExperienceSkillsDTOByUserIdCandidate(int userId);
+        public Task<ICollection<ExperienceSkillDTO>> GetExperienceSkillsDTOByUserIdCandidate(int userId);
 
     }
 }

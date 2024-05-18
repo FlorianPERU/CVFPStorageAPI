@@ -18,14 +18,14 @@ namespace CVFPDataAccess.Repositories.Hobbies
             _context = cVContext;
         }
 
-        public ICollection<Hobbie> GetHobbiesByUserIdCandidate(int userId)
+        public async Task<ICollection<Hobbie>> GetHobbiesByUserIdCandidateAsync(int userId)
         {
-            return _context.AssociationCandidateHobbies
+            return await _context.AssociationCandidateHobbies
                 .Where(ach => ach.CandidateId == userId)
                 .Include(chs => chs.Hobbie)
                 .ThenInclude(hs => hs.AssociationCandidateHobbies)
                 .Select(ach => ach.Hobbie)
-                .ToList();
+                .ToListAsync();
         }
     }
 }

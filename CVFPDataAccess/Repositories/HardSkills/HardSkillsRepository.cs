@@ -18,14 +18,14 @@ namespace CVFPDataAccess.Repositories.HardSkills
             _context = cVContext;
         }
 
-        public ICollection<HardSkill> GetHardSkillsByUserIdCandidate(int userId)
+        public async Task<ICollection<HardSkill>> GetHardSkillsByUserIdCandidate(int userId)
         {
-            return _context.AssociationCandidatesHardSkills
+            return await _context.AssociationCandidatesHardSkills
                 .Where(acss => acss.CandidateId == userId)
                 .Include(chs => chs.HardSkill)
                 .ThenInclude(hs => hs.HardSkillType)
                 .Include(hs => hs.HardSkill.AssociationCandidateHardSkills)
-                .Select(ss => ss.HardSkill).ToList();
+                .Select(ss => ss.HardSkill).ToListAsync();
         }
     }
 }

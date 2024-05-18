@@ -20,9 +20,10 @@ namespace CVFPServices.Services
             _candidatesRepository = candidatesRepository;
         }
 
-        public CandidateDTO GetFirstCandidateDTO()
+        public async Task<CandidateDTO> GetFirstCandidateDTO()
         {
-            return _candidatesRepository.GetFirstCandidate().ToDTO();
+            var candidates = await _candidatesRepository.GetFirstCandidate();
+            return candidates.ToDTO();
         }
     }
 }

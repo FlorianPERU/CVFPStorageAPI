@@ -1,5 +1,6 @@
 ﻿using CVFPDataAccess.Data;
 using CVFPDataAccess.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,9 @@ namespace CVFPDataAccess.Repositories.Certifications
             _context = cVContext;
         }
 
-        public ICollection<Certification> GetCertificationsByUserIdCandidate(int userId)
+        public async Task<ICollection<Certification>> GetCertificationsByUserIdCandidate(int userId)
         {
-            return _context.Certifications.Where(c => c.CandidateId == userId).ToList();
+            return await _context.Certifications.Where(c => c.CandidateId == userId).ToListAsync();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using CVFPDataAccess.Data;
 using CVFPDataAccess.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,9 @@ namespace CVFPDataAccess.Repositories.Formations
             _context = cVContext;
         }
 
-        public ICollection<Formation> GetFormationsByUserIdCandidate(int userId)
+        public async Task<ICollection<Formation>> GetFormationsByUserIdCandidate(int userId)
         {
-            return _context.Formations.Where(c => c.CandidateId == userId).ToList();
+            return await _context.Formations.Where(c => c.CandidateId == userId).ToListAsync();
         }
     }
 }

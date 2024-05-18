@@ -4,6 +4,7 @@ using CVFPDataAccess.Repositories.Formations;
 using CVFPServices.DTOs;
 using CVFPServices.Extensions;
 using CVFPServices.Services.Interfaces;
+using Microsoft.AspNetCore.Http.Features;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,12 +25,14 @@ namespace CVFPServices.Services
             _certificationsRepository = certificationsRepository;
         }
 
-        public CertificationsFormationsDTO GetCertificationsFormationsDTOByUserId(int userId)
+        public async Task<CertificationsFormationsDTO> GetCertificationsFormationsDTOByUserId(int userId)
         {
+            var certifications = await _certificationsRepository.GetCertificationsByUserIdCandidate(userId);
+            var formations = await _formationsRepository.GetFormationsByUserIdCandidate(userId);
             return new CertificationsFormationsDTO()
             {
-                Certifications = _certificationsRepository.GetCertificationsByUserIdCandidate(userId).Select(c => c.ToDTO()).ToList(),
-                Formations = _formationsRepository.GetFormationsByUserIdCandidate(userId).Select(c => c.ToDTO()).ToList()
+                Certifications = certifications.Select(c => c.ToDTO()).ToList(),
+                Formations = formations.Select(c => c.ToDTO()).ToList()
             };
         }
     }
