@@ -12,11 +12,11 @@ namespace CVFPDataAccess.Models
         [Required]
         public int Position { get; set; }
         public int? SoftSkillId { get; set; }
-        public SoftSkill SoftSkill { get; set; }
+        public required SoftSkill SoftSkill { get; set; }
         public int? HardSkillId { get; set; }
-        public HardSkill HardSkill { get; set; }
+        public required HardSkill HardSkill { get; set; }
         [Required]
         public int ExperienceId { get; set; }
-        public Experience Experience { get; set; }
+        public required virtual Experience Experience { get; set; }
     }
 }

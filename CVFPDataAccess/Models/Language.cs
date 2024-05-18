@@ -13,9 +13,9 @@ namespace CVFPDataAccess.Models
         public int Id { get; set; }
         [Required]
         [MaxLength(50)]
-        public string Name { get; set; }
+        public required string Name { get; set; }
         [MaxLength(255)]
         public string? LogoLink { get; set; }
-        public ICollection<AssociationCandidateLanguage> AssociationCandidateLanguages { get; set; }
+        public required virtual ICollection<AssociationCandidateLanguage> AssociationCandidateLanguages { get; set; }
     }
 }

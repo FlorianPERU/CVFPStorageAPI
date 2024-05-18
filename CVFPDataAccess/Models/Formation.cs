@@ -13,13 +13,13 @@ namespace CVFPDataAccess.Models
         public int Id { get; set; }
         [Required]
         [MaxLength(50)]
-        public string Name { get; set; }
+        public required string Name { get; set; }
         [Required]
         [MaxLength(100)]
-        public string SchoolName { get; set; }
+        public required string SchoolName { get; set; }
         [Required]
         [MaxLength(100)]
-        public string SchoolAddress { get; set; }
+        public required string SchoolAddress { get; set; }
         [Required]
         public DateTime BeginDate { get; set; }
         [Required]
@@ -27,6 +27,6 @@ namespace CVFPDataAccess.Models
         [Required]
         public int Position { get; set; }
         public int CandidateId { get; set; }
-        public Candidate Candidate { get; set; }
+        public required virtual Candidate Candidate { get; set; }
     }
 }

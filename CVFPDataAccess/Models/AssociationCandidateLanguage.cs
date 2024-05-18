@@ -11,9 +11,9 @@ namespace CVFPDataAccess.Models
     public class AssociationCandidateLanguage
     {
         public int CandidateId { get; set; }
-        public Candidate Candidate { get; set; }
+        public required virtual Candidate Candidate { get; set; }
         public int LanguageId { get; set; }
-        public Language Language { get; set; }
+        public required Language Language { get; set; }
         [Required]
         public int Position { get; set; }
         [Required]

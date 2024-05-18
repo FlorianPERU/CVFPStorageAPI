@@ -10,8 +10,8 @@ namespace CVFPServices.DTOs
     public class SoftSkillDTO
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string LogoLink { get; set; }
+        public required string Name { get; set; }
+        public required string LogoLink { get; set; }
         public int SkillMasteryPercentage { get; set; }
         public int Position { get; set; }
     }

@@ -13,16 +13,16 @@ namespace CVFPDataAccess.Models
         public int Id { get; set; }
         [Required]
         [MaxLength(50)]
-        public string Name { get; set; }
+        public required string Name { get; set; }
         [Required]
         [MaxLength(255)]
-        public string LogoLink { get; set; }
+        public required string LogoLink { get; set; }
         [Required]
         public DateTime ObtentionDate { get; set; }
         [Required]
         public int Position { get; set; }
         public int CandidateId { get; set; }
-        public Candidate Candidate { get; set; }
+        public virtual required Candidate Candidate { get; set; }
 
 
     }

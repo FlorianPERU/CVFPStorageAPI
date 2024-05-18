@@ -10,9 +10,9 @@ namespace CVFPServices.DTOs
     public class HardSkillDTO
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string LogoLink { get; set; }
+        public required string Name { get; set; }
+        public required string LogoLink { get; set; }
         public int Position { get; set; }
-        public HardSkillTypeDTO HardSkillType { get; set; }
+        public required HardSkillTypeDTO HardSkillType { get; set; }
     }
 }

@@ -16,24 +16,24 @@ namespace CVFPDataAccess.Models
         public DateTime? EndDate { get; set; }
         [Required]
         [MaxLength(50)]
-        public string CompanyName { get; set; }
+        public required string CompanyName { get; set; }
         [Required]
         [MaxLength(50)]
-        public string WorkCity { get; set; }
+        public required string WorkCity { get; set; }
         [MaxLength(255)]
         public string? CompanyInfo { get; set; }
         [MaxLength(255)]
         public string? LinkedinLink { get; set; }
         public int ContractTypeId { get; set; }
-        public ContractType ContractType { get; set; }
+        public required ContractType ContractType { get; set; }
         public int JobId { get; set; }
-        public Job Job { get; set; }
+        public required Job Job { get; set; }
         public int? ParentExperienceId { get; set; }
-        public Experience ParentExperience { get; set; }
-        public ICollection<Experience> SubExperiences { get; set; }
-        public ICollection<JobTask> JobTasks { get; set; }
-        public ICollection<ExperienceSkill> ExperienceSkills { get; set; }
+        public virtual required Experience ParentExperience { get; set; }
+        public virtual required ICollection<Experience> SubExperiences { get; set; }
+        public virtual required ICollection<JobTask> JobTasks { get; set; }
+        public virtual required ICollection<ExperienceSkill> ExperienceSkills { get; set; }
         public int CandidateId { get; set; }
-        public virtual Candidate Candidate { get; set; }
+        public virtual required Candidate Candidate { get; set; }
     }
 }

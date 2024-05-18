@@ -10,7 +10,7 @@ namespace CVFPServices.DTOs
     public class JobTaskDTO
     {
         public int Id { get; set; }
-        public string Task { get; set; }
+        public required string Task { get; set; }
         public int Position { get; set; }
         public int ExperienceId { get; set; }
     }

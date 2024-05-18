@@ -11,9 +11,9 @@ namespace CVFPDataAccess.Models
     public class AssociationCandidateHardSkill
     {
         public int CandidateId { get; set; }
-        public Candidate Candidate { get; set; }
+        public required virtual Candidate Candidate { get; set; }
         public int HardSkillId { get; set; }
-        public HardSkill HardSkill { get; set; }
+        public required HardSkill HardSkill { get; set; }
         [Required]
         public int PositionHardSkill { get; set; }
         [Required]

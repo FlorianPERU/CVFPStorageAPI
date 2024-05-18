@@ -11,8 +11,8 @@ namespace CVFPServices.DTOs
     public class CertificationDTO
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string LogoLink { get; set; }
+        public required string Name { get; set; }
+        public required string LogoLink { get; set; }
         public DateTime ObtentionDate { get; set; }
         public int Position { get; set; }
     }

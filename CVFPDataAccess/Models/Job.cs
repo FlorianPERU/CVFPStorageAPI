@@ -13,7 +13,7 @@ namespace CVFPDataAccess.Models
         public int Id { get; set; }
         [Required]
         [MaxLength(50)]
-        public string Name { get; set; }
-        public ICollection<Experience> Experiences { get; set; }
+        public required string Name { get; set; }
+        public required virtual ICollection<Experience> Experiences { get; set; }
     }
 }

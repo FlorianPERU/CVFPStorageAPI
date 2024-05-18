@@ -10,7 +10,7 @@ namespace CVFPServices.DTOs
 {
     public class CandidateSkillsDTO
     {
-        public List<SoftSkillDTO> SoftSkills { get; set; }
-        public List<HardSkillDTO> HardSkills { get; set; }
+        public required List<SoftSkillDTO> SoftSkills { get; set; }
+        public required List<HardSkillDTO> HardSkills { get; set; }
     }
 }

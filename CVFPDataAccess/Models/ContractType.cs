@@ -14,7 +14,7 @@ namespace CVFPDataAccess.Models
         [Required]
         [EnumDataType(typeof(ContractTypeEnum))]
         public ContractTypeEnum Type { get; set; }
-        public ICollection<Experience> Experiences { get; set; }
+        public required virtual ICollection<Experience> Experiences { get; set; }
 
     }
     public enum ContractTypeEnum

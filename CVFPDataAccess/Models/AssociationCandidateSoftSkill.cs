@@ -11,9 +11,9 @@ namespace CVFPDataAccess.Models
     public class AssociationCandidateSoftSkill
     {
         public int CandidateId { get; set; }
-        public Candidate Candidate { get; set; }
+        public required virtual Candidate Candidate { get; set; }
         public int SoftSkillId { get; set; }
-        public SoftSkill SoftSkill { get; set; }
+        public required SoftSkill SoftSkill { get; set; }
         [Required]
         [Range(0, 100)]
         public int SkillMasteryPercentage { get; set; }

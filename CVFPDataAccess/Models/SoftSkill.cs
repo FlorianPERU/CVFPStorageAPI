@@ -13,11 +13,11 @@ namespace CVFPDataAccess.Models
         public int Id { get; set; }
         [Required]
         [MaxLength(50)]
-        public string Name { get; set; }
+        public required string Name { get; set; }
         [Required]
         [MaxLength(255)]
-        public string LogoLink { get; set; }
-        public ICollection<AssociationCandidateSoftSkill> AssociationCandidateSoftSkills { get; set; }
-        public ICollection<ExperienceSkill> ExperienceSkills { get; set; }
+        public required string LogoLink { get; set; }
+        public required virtual ICollection<AssociationCandidateSoftSkill> AssociationCandidateSoftSkills { get; set; }
+        public required  virtual ICollection<ExperienceSkill> ExperienceSkills { get; set; }
     }
 }

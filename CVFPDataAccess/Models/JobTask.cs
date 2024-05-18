@@ -13,10 +13,10 @@ namespace CVFPDataAccess.Models
         public int Id { get; set; }
         [Required]
         [MaxLength(255)]
-        public string Task { get; set; }
+        public required string Task { get; set; }
         [Required]
         public int Position { get; set; }
         public int ExperienceId { get; set; }
-        public Experience Experience { get; set; }
+        public required virtual Experience Experience { get; set; }
     }
 }

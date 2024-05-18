@@ -10,8 +10,8 @@ namespace CVFPServices.DTOs
     public class CandidateHobbiesDTO
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string LogoLink { get; set; }
+        public required string Name { get; set; }
+        public string? LogoLink { get; set; }
         public int Position { get; set; }
     }
 }

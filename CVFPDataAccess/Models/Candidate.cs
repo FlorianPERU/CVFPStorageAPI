@@ -13,10 +13,10 @@ namespace CVFPDataAccess.Models
         public int Id { get; set; }
         [Required]
         [MaxLength(50)]
-        public string FirstName { get; set; }
+        public required string FirstName { get; set; }
         [Required]
         [MaxLength(50)]
-        public string LastName { get; set; }
+        public required string LastName { get; set; }
         [Required]
         public DateTime DateOfBirth { get; set; }
         [Required]
@@ -26,33 +26,33 @@ namespace CVFPDataAccess.Models
         public bool HasOwnVehicle { get; set; }
         [Required]
         [MaxLength(500)]
-        public string PresentationSentence { get; set; }
+        public required string PresentationSentence { get; set; }
         [Required]
         [MaxLength(255)]
-        public string IdentityPhotoLink { get; set; }
+        public required string IdentityPhotoLink { get; set; }
         [Required]
         [MaxLength(255)]
-        public string LinkedinLink { get; set; }
+        public required string LinkedinLink { get; set; }
         [Required]
         [MaxLength(255)]
-        public string Address { get; set; }
+        public required string Address { get; set; }
         [Required]
         [MaxLength(100)]
         [EmailAddress]
-        public string Email { get; set; }
+        public required string Email { get; set; }
         [Required]
         [MaxLength(20)]
-        public string PhoneNumber { get; set; }
+        public required string PhoneNumber { get; set; }
         [Required]
         [MaxLength(100)]
-        public string DesiredJobType { get; set; }
-        public ICollection<Formation> Formations { get; set; }
-        public ICollection<Certification> Certifications { get; set; }
-        public ICollection<Experience> Experiences { get; set; }
-        public ICollection<AssociationCandidateSoftSkill> AssociationCandidateSoftSkills { get; set; }
-        public ICollection<AssociationCandidateHardSkill> AssociationCandidateHardSkills { get; set; }
-        public ICollection<AssociationCandidateHobbie> AssociationCandidateHobbies { get; set; }
-        public ICollection<AssociationCandidateLanguage> AssociationCandidateLanguages { get; set; }
+        public required string DesiredJobType { get; set; }
+        public virtual required ICollection<Formation> Formations { get; set; }
+        public virtual required ICollection<Certification> Certifications { get; set; }
+        public virtual required ICollection<Experience> Experiences { get; set; }
+        public virtual required ICollection<AssociationCandidateSoftSkill> AssociationCandidateSoftSkills { get; set; }
+        public virtual required ICollection<AssociationCandidateHardSkill> AssociationCandidateHardSkills { get; set; }
+        public virtual required ICollection<AssociationCandidateHobbie> AssociationCandidateHobbies { get; set; }
+        public virtual required ICollection<AssociationCandidateLanguage> AssociationCandidateLanguages { get; set; }
     }
 
     public enum DrivingLicenseTypeEnum
