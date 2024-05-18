@@ -20,10 +20,10 @@ namespace CVFPServices.Services
             _languagesRepository = languagesRepository;
         }
 
-        public async Task<ICollection<CandidateLanguagesDTO>> GetLanguagesDTOByUserIdAsync(int userId)
+        public async Task<ICollection<CandidateLanguagesDTO>> GetLanguagesDTOByCandidateIdAsync(int candidateId)
         {
-            var languages = await _languagesRepository.GetLanguagesByUserIdCandidateAsync(userId);
-            return languages.Select(l=> l.ToDTO(userId)).ToList();
+            var languages = await _languagesRepository.GetLanguagesByCandidateIdAsync(candidateId);
+            return languages.Select(l=> l.ToDTO(candidateId)).ToList();
         }
     }
 }

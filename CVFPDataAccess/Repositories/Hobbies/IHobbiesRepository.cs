@@ -9,6 +9,6 @@ namespace CVFPDataAccess.Repositories.Hobbies
 {
     public interface IHobbiesRepository
     {
-        public Task<ICollection<Hobbie>> GetHobbiesByUserIdCandidateAsync(int userId);
+        public Task<ICollection<Hobbie>> GetHobbiesByCandidateIdAsync(int candidateId);
     }
 }

@@ -20,9 +20,9 @@ namespace CVFPAPI.Controllers
         }
 
         [HttpGet(Name = "GetCandidateHobbies")]
-        public async Task<ICollection<CandidateHobbiesDTO>> Get(int userId)
+        public async Task<ICollection<CandidateHobbiesDTO>> Get(int candidateId)
         {
-            return await _candidateHobbiesService.GetHobbiesDTOByUserIdAsync(userId);
+            return await _candidateHobbiesService.GetHobbiesDTOByCandidateIdAsync(candidateId);
         }
     }
 }

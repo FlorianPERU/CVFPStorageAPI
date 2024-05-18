@@ -9,7 +9,7 @@ namespace CVFPServices.Services.Interfaces
 {
     public interface ICandidateSkillsService
     {
-        public Task<CandidateSkillsDTO> GetCandidateSkillsDTOByUserIdAsync(int userId);
+        public Task<CandidateSkillsDTO> GetCandidateSkillsDTOByCandidateIdAsync(int candidateId);
 
     }
 }

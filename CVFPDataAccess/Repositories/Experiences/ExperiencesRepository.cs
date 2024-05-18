@@ -18,10 +18,10 @@ namespace CVFPDataAccess.Repositories.Experiences
             _context = cVContext;
         }
 
-        public async Task<ICollection<Experience>> GetExperiencesByUserIdCandidateAsync(int userId)
+        public async Task<ICollection<Experience>> GetExperiencesByCandidateIdAsync(int candidateId)
         {
             return await _context.Experiences
-                .Where(e => e.CandidateId == userId && e.ParentExperienceId == null)//get tree experiences
+                .Where(e => e.CandidateId == candidateId && e.ParentExperienceId == null)//get tree experiences
                 .Include(e => e.SubExperiences)
                 .Include(e => e.Job)
                 .Include(e => e.ContractType)

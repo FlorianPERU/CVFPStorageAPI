@@ -9,7 +9,7 @@ namespace CVFPServices.Services.Interfaces
 {
     public interface ICandidateHobbiesService
     {
-        public Task<ICollection<CandidateHobbiesDTO>> GetHobbiesDTOByUserIdAsync(int userId);
+        public Task<ICollection<CandidateHobbiesDTO>> GetHobbiesDTOByCandidateIdAsync(int candidateId);
 
     }
 }

@@ -18,10 +18,10 @@ namespace CVFPDataAccess.Repositories.HardSkills
             _context = cVContext;
         }
 
-        public async Task<ICollection<HardSkill>> GetHardSkillsByUserIdCandidateAsync(int userId)
+        public async Task<ICollection<HardSkill>> GetHardSkillsByCandidateIdAsync(int candidateId)
         {
             return await _context.AssociationCandidatesHardSkills
-                .Where(acss => acss.CandidateId == userId)
+                .Where(acss => acss.CandidateId == candidateId)
                 .Include(chs => chs.HardSkill)
                 .ThenInclude(hs => hs.HardSkillType)
                 .Include(hs => hs.HardSkill.AssociationCandidateHardSkills)

@@ -18,9 +18,9 @@ namespace CVFPDataAccess.Repositories.Certifications
             _context = cVContext;
         }
 
-        public async Task<ICollection<Certification>> GetCertificationsByUserIdCandidateAsync(int userId)
+        public async Task<ICollection<Certification>> GetCertificationsByCandidateIdAsync(int candidateId)
         {
-            return await _context.Certifications.Where(c => c.CandidateId == userId).ToListAsync();
+            return await _context.Certifications.Where(c => c.CandidateId == candidateId).ToListAsync();
         }
     }
 }

@@ -10,10 +10,10 @@ namespace CVFPServices.Extensions
 {
     public static class LanguageExtensions
     {
-        public static CandidateLanguagesDTO ToDTO(this Language Language, int userId)
+        public static CandidateLanguagesDTO ToDTO(this Language Language, int candidateId)
         {
             AssociationCandidateLanguage associationCandidateLanguage = 
-                Language.AssociationCandidateLanguages.First(acss => acss.CandidateId == userId && acss.LanguageId == Language.Id);
+                Language.AssociationCandidateLanguages.First(acss => acss.CandidateId == candidateId && acss.LanguageId == Language.Id);
             return new CandidateLanguagesDTO
             {
                 Id = Language.Id,

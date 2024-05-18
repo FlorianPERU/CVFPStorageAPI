@@ -10,10 +10,10 @@ namespace CVFPServices.Extensions
 {
     public static class SoftSkillExtensions
     {
-        public static SoftSkillDTO ToDTO(this SoftSkill softSkill, int userId)
+        public static SoftSkillDTO ToDTO(this SoftSkill softSkill, int candidateId)
         {
             AssociationCandidateSoftSkill associationCandidateSoftSkill = 
-                softSkill.AssociationCandidateSoftSkills.First(acss => acss.CandidateId == userId && acss.SoftSkillId == softSkill.Id);
+                softSkill.AssociationCandidateSoftSkills.First(acss => acss.CandidateId == candidateId && acss.SoftSkillId == softSkill.Id);
             return new SoftSkillDTO
             {
                 Id = softSkill.Id,

@@ -10,10 +10,10 @@ namespace CVFPServices.Extensions
 {
     public static class HobbieExtensions
     {
-        public static CandidateHobbiesDTO ToDTO(this Hobbie hobbie, int userId)
+        public static CandidateHobbiesDTO ToDTO(this Hobbie hobbie, int candidateId)
         {
             AssociationCandidateHobbie associationCandidateHobbie = 
-                hobbie.AssociationCandidateHobbies.First(acss => acss.CandidateId == userId && acss.HobbieId == hobbie.Id);
+                hobbie.AssociationCandidateHobbies.First(acss => acss.CandidateId == candidateId && acss.HobbieId == hobbie.Id);
             return new CandidateHobbiesDTO
             {
                 Id = hobbie.Id,

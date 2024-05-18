@@ -19,9 +19,9 @@ namespace CVFPAPI.Controllers
         }
 
         [HttpGet(Name = "GetCertificationsFormations")]
-        public async Task<CertificationsFormationsDTO> Get(int userId)
+        public async Task<CertificationsFormationsDTO> Get(int candidateId)
         {
-            return await _certificationsFormationsService.GetCertificationsFormationsDTOByUserIdAsync(userId);
+            return await _certificationsFormationsService.GetCertificationsFormationsDTOByCandidateIdAsync(candidateId);
         }
     }
 }

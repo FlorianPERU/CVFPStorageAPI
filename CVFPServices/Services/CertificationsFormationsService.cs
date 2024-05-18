@@ -25,10 +25,10 @@ namespace CVFPServices.Services
             _certificationsRepository = certificationsRepository;
         }
 
-        public async Task<CertificationsFormationsDTO> GetCertificationsFormationsDTOByUserIdAsync(int userId)
+        public async Task<CertificationsFormationsDTO> GetCertificationsFormationsDTOByCandidateIdAsync(int candidateId)
         {
-            var certifications = await _certificationsRepository.GetCertificationsByUserIdCandidateAsync(userId);
-            var formations = await _formationsRepository.GetFormationsByUserIdCandidateAsync(userId);
+            var certifications = await _certificationsRepository.GetCertificationsByCandidateIdAsync(candidateId);
+            var formations = await _formationsRepository.GetFormationsByCandidateIdAsync(candidateId);
             return new CertificationsFormationsDTO()
             {
                 Certifications = certifications.Select(c => c.ToDTO()).ToList(),

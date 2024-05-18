@@ -20,9 +20,9 @@ namespace CVFPServices.Services
             _jobTasksRepository = jobTasksRepository;
         }
 
-        public async Task<ICollection<JobTaskDTO>> GetJobTasksDTOByUserIdCandidateAsync(int userId)
+        public async Task<ICollection<JobTaskDTO>> GetJobTasksDTOByCandidateIdAsync(int candidateId)
         {
-            var jobTasks = await _jobTasksRepository.GetJobTasksByUserIdCandidateAsync(userId);
+            var jobTasks = await _jobTasksRepository.GetJobTasksByCandidateIdAsync(candidateId);
             return jobTasks.Select(e => e.ToDTO()).ToList();
         }
     }

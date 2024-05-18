@@ -15,14 +15,14 @@ namespace CVFPServices.Services
     {
 
         private readonly IExperiencesRepository _experiencesRepository;
-        public ExperiencesService(IExperiencesRepository ExperiencesRepository) 
+        public ExperiencesService(IExperiencesRepository experiencesRepository) 
         {
-            _experiencesRepository = ExperiencesRepository;
+            _experiencesRepository = experiencesRepository;
         }
 
-        public async Task<ICollection<ExperienceDTO>> GetExperiencesDTOByUserIdCandidateAsync(int userId)
+        public async Task<ICollection<ExperienceDTO>> GetExperiencesDTOByCandidateIdAsync(int candidateId)
         {
-            var experiences = await _experiencesRepository.GetExperiencesByUserIdCandidateAsync(userId);
+            var experiences = await _experiencesRepository.GetExperiencesByCandidateIdAsync(candidateId);
             return experiences.Select(e => e.ToDTO()).ToList();
         }
     }

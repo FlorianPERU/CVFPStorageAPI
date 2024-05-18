@@ -18,10 +18,10 @@ namespace CVFPDataAccess.Repositories.Hobbies
             _context = cVContext;
         }
 
-        public async Task<ICollection<Hobbie>> GetHobbiesByUserIdCandidateAsync(int userId)
+        public async Task<ICollection<Hobbie>> GetHobbiesByCandidateIdAsync(int candidateId)
         {
             return await _context.AssociationCandidateHobbies
-                .Where(ach => ach.CandidateId == userId)
+                .Where(ach => ach.CandidateId == candidateId)
                 .Include(chs => chs.Hobbie)
                 .ThenInclude(hs => hs.AssociationCandidateHobbies)
                 .Select(ach => ach.Hobbie)

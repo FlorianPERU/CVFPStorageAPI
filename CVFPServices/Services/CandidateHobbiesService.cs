@@ -20,10 +20,10 @@ namespace CVFPServices.Services
             _hobbiesRepository = hobbiesRepository;
         }
 
-        public async Task<ICollection<CandidateHobbiesDTO>> GetHobbiesDTOByUserIdAsync(int userId)
+        public async Task<ICollection<CandidateHobbiesDTO>> GetHobbiesDTOByCandidateIdAsync(int candidateId)
         {
-            var hobbies = await _hobbiesRepository.GetHobbiesByUserIdCandidateAsync(userId);
-            return hobbies.Select(h=> h.ToDTO(userId)).ToList();
+            var hobbies = await _hobbiesRepository.GetHobbiesByCandidateIdAsync(candidateId);
+            return hobbies.Select(h=> h.ToDTO(candidateId)).ToList();
         }
     }
 }

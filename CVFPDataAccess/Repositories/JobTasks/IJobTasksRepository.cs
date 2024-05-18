@@ -9,6 +9,6 @@ namespace CVFPDataAccess.Repositories.JobTasks
 {
     public interface IJobTasksRepository
     {
-        public Task<ICollection<JobTask>> GetJobTasksByUserIdCandidateAsync(int userId);
+        public Task<ICollection<JobTask>> GetJobTasksByCandidateIdAsync(int candidateId);
     }
 }

@@ -9,6 +9,6 @@ namespace CVFPDataAccess.Repositories.Formations
 {
     public interface IFormationsRepository
     {
-        public Task<ICollection<Formation>> GetFormationsByUserIdCandidateAsync(int userId);
+        public Task<ICollection<Formation>> GetFormationsByCandidateIdAsync(int candidateId);
     }
 }

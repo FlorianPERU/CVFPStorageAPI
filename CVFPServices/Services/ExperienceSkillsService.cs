@@ -20,9 +20,9 @@ namespace CVFPServices.Services
             _experienceSkillsRepository = experienceSkillsRepository;
         }
 
-        public async Task<ICollection<ExperienceSkillDTO>> GetExperienceSkillsDTOByUserIdCandidateAsync(int userId)
+        public async Task<ICollection<ExperienceSkillDTO>> GetExperienceSkillsDTOByCandidateIdAsync(int candidateId)
         {
-            var experienceSkills = await _experienceSkillsRepository.GetExperienceSkillsByUserIdCandidateAsync(userId);
+            var experienceSkills = await _experienceSkillsRepository.GetExperienceSkillsByCandidateIdAsync(candidateId);
             return experienceSkills.Select(e => e.ToDTO()).ToList();
         }
     }

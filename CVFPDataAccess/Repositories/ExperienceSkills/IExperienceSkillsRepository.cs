@@ -9,6 +9,6 @@ namespace CVFPDataAccess.Repositories.ExperienceSkills
 {
     public interface IExperienceSkillsRepository
     {
-        public Task<ICollection<ExperienceSkill>> GetExperienceSkillsByUserIdCandidateAsync(int userId);
+        public Task<ICollection<ExperienceSkill>> GetExperienceSkillsByCandidateIdAsync(int candidateId);
     }
 }

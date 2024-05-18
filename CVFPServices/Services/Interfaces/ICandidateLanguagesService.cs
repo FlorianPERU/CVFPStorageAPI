@@ -9,7 +9,7 @@ namespace CVFPServices.Services.Interfaces
 {
     public interface ICandidateLanguagesService
     {
-        public Task<ICollection<CandidateLanguagesDTO>> GetLanguagesDTOByUserIdAsync(int userId);
+        public Task<ICollection<CandidateLanguagesDTO>> GetLanguagesDTOByCandidateIdAsync(int candidateId);
 
     }
 }

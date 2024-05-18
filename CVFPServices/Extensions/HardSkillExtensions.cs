@@ -10,10 +10,10 @@ namespace CVFPServices.Extensions
 {
     public static class HardSkillExtensions
     {
-        public static HardSkillDTO ToDTO(this HardSkill hardSkill, int userId)
+        public static HardSkillDTO ToDTO(this HardSkill hardSkill, int candidateId)
         {
             AssociationCandidateHardSkill associationCandidateHardSkill = 
-                hardSkill.AssociationCandidateHardSkills.First(acss => acss.CandidateId == userId && acss.HardSkillId == hardSkill.Id);
+                hardSkill.AssociationCandidateHardSkills.First(acss => acss.CandidateId == candidateId && acss.HardSkillId == hardSkill.Id);
             return new HardSkillDTO
             {
                 Id = hardSkill.Id,
