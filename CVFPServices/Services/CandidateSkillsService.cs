@@ -25,7 +25,7 @@ namespace CVFPServices.Services
             _hardSkillsRepository = hardSkillsRepository;
         }
 
-        public async Task<CandidateSkillsDTO> GetCandidateSkillsDTOByUserId(int userId)
+        public async Task<CandidateSkillsDTO> GetCandidateSkillsDTOByUserIdAsync(int userId)
         {
             var softSkills = await _softSkillsRepository.GetSoftSkillsByUserIdCandidate(userId);
             var hardSkills = await _hardSkillsRepository.GetHardSkillsByUserIdCandidate(userId);

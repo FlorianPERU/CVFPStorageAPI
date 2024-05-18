@@ -20,7 +20,7 @@ namespace CVFPServices.Services
             _languagesRepository = languagesRepository;
         }
 
-        public async Task<ICollection<CandidateLanguagesDTO>> GetLanguagesDTOByUserId(int userId)
+        public async Task<ICollection<CandidateLanguagesDTO>> GetLanguagesDTOByUserIdAsync(int userId)
         {
             var languages = await _languagesRepository.GetLanguagesByUserIdCandidate(userId);
             return languages.Select(l=> l.ToDTO(userId)).ToList();

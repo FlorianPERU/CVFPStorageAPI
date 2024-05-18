@@ -21,7 +21,7 @@ namespace CVFPAPI.Controllers
         [HttpGet(Name = "GetCandidateLanguages")]
         public async Task<ICollection<CandidateLanguagesDTO>> Get(int userId)
         {
-            return await _candidateLanguagesService.GetLanguagesDTOByUserId(userId);
+            return await _candidateLanguagesService.GetLanguagesDTOByUserIdAsync(userId);
         }
     }
 }

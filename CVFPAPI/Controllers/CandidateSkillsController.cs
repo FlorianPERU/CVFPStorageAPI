@@ -21,7 +21,7 @@ namespace CVFPAPI.Controllers
         [HttpGet(Name = "GetCandidateSkills")]
         public async Task<CandidateSkillsDTO> Get(int userId)
         {
-            return await _candidateSkillsService.GetCandidateSkillsDTOByUserId(userId);
+            return await _candidateSkillsService.GetCandidateSkillsDTOByUserIdAsync(userId);
         }
     }
 }

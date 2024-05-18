@@ -25,7 +25,7 @@ namespace CVFPServices.Services
             _certificationsRepository = certificationsRepository;
         }
 
-        public async Task<CertificationsFormationsDTO> GetCertificationsFormationsDTOByUserId(int userId)
+        public async Task<CertificationsFormationsDTO> GetCertificationsFormationsDTOByUserIdAsync(int userId)
         {
             var certifications = await _certificationsRepository.GetCertificationsByUserIdCandidate(userId);
             var formations = await _formationsRepository.GetFormationsByUserIdCandidate(userId);
