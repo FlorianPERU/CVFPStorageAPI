@@ -13,7 +13,7 @@ namespace CVFPDataAccess.Repositories.Candidates
             _context = cVContext;
         }
 
-        public async Task<Candidate> GetFirstCandidate()
+        public async Task<Candidate> GetFirstCandidateAsync()
         {
             return await _context.Candidates.FirstAsync();
         }

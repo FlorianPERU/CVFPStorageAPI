@@ -18,7 +18,7 @@ namespace CVFPDataAccess.Repositories.ExperienceSkills
             _context = cVContext;
         }
 
-        public async Task<ICollection<ExperienceSkill>> GetExperienceSkillsByUserIdCandidate(int userId)
+        public async Task<ICollection<ExperienceSkill>> GetExperienceSkillsByUserIdCandidateAsync(int userId)
         {
             return await _context.ExperienceSkills
                 .Where(acss => acss.Experience.CandidateId == userId)

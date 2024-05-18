@@ -18,7 +18,7 @@ namespace CVFPDataAccess.Repositories.JobTasks
             _context = cVContext;
         }
 
-        public async Task<ICollection<JobTask>> GetJobTasksByUserIdCandidate(int userId)
+        public async Task<ICollection<JobTask>> GetJobTasksByUserIdCandidateAsync(int userId)
         {
             return await _context.JobTasks
                 .Where(ach => ach.Experience.CandidateId == userId)

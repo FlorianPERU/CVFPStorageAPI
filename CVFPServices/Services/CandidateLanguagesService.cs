@@ -22,7 +22,7 @@ namespace CVFPServices.Services
 
         public async Task<ICollection<CandidateLanguagesDTO>> GetLanguagesDTOByUserIdAsync(int userId)
         {
-            var languages = await _languagesRepository.GetLanguagesByUserIdCandidate(userId);
+            var languages = await _languagesRepository.GetLanguagesByUserIdCandidateAsync(userId);
             return languages.Select(l=> l.ToDTO(userId)).ToList();
         }
     }

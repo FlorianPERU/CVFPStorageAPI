@@ -22,7 +22,7 @@ namespace CVFPServices.Services
 
         public async Task<ICollection<ExperienceSkillDTO>> GetExperienceSkillsDTOByUserIdCandidateAsync(int userId)
         {
-            var experienceSkills = await _experienceSkillsRepository.GetExperienceSkillsByUserIdCandidate(userId);
+            var experienceSkills = await _experienceSkillsRepository.GetExperienceSkillsByUserIdCandidateAsync(userId);
             return experienceSkills.Select(e => e.ToDTO()).ToList();
         }
     }

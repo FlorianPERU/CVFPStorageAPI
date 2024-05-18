@@ -22,7 +22,7 @@ namespace CVFPServices.Services
 
         public async Task<CandidateDTO> GetFirstCandidateDTOAsync()
         {
-            var candidates = await _candidatesRepository.GetFirstCandidate();
+            var candidates = await _candidatesRepository.GetFirstCandidateAsync();
             return candidates.ToDTO();
         }
     }

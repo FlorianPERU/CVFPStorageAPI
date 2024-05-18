@@ -18,7 +18,7 @@ namespace CVFPDataAccess.Repositories.SoftSkills
             _context = cVContext;
         }
 
-        public async Task<ICollection<SoftSkill>> GetSoftSkillsByUserIdCandidate(int userId)
+        public async Task<ICollection<SoftSkill>> GetSoftSkillsByUserIdCandidateAsync(int userId)
         {
             return await _context.AssociationCandidatesSoftSkills
                 .Where(acss => acss.CandidateId == userId)

@@ -18,7 +18,7 @@ namespace CVFPDataAccess.Repositories.Experiences
             _context = cVContext;
         }
 
-        public async Task<ICollection<Experience>> GetExperiencesByUserIdCandidate(int userId)
+        public async Task<ICollection<Experience>> GetExperiencesByUserIdCandidateAsync(int userId)
         {
             return await _context.Experiences
                 .Where(e => e.CandidateId == userId && e.ParentExperienceId == null)//get tree experiences

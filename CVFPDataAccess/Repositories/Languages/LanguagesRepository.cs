@@ -18,7 +18,7 @@ namespace CVFPDataAccess.Repositories.Languages
             _context = cVContext;
         }
 
-        public async Task<ICollection<Language>> GetLanguagesByUserIdCandidate(int userId)
+        public async Task<ICollection<Language>> GetLanguagesByUserIdCandidateAsync(int userId)
         {
             return await _context.AssociationCandidateLanguages
                 .Where(ach => ach.CandidateId == userId)

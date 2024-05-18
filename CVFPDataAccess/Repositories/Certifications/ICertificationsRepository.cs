@@ -9,6 +9,6 @@ namespace CVFPDataAccess.Repositories.Certifications
 {
     public interface ICertificationsRepository
     {
-        public Task<ICollection<Certification>> GetCertificationsByUserIdCandidate(int userId);
+        public Task<ICollection<Certification>> GetCertificationsByUserIdCandidateAsync(int userId);
     }
 }

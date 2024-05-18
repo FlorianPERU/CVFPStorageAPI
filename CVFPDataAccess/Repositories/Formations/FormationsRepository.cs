@@ -18,7 +18,7 @@ namespace CVFPDataAccess.Repositories.Formations
             _context = cVContext;
         }
 
-        public async Task<ICollection<Formation>> GetFormationsByUserIdCandidate(int userId)
+        public async Task<ICollection<Formation>> GetFormationsByUserIdCandidateAsync(int userId)
         {
             return await _context.Formations.Where(c => c.CandidateId == userId).ToListAsync();
         }
