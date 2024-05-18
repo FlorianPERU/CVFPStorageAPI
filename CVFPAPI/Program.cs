@@ -1,5 +1,6 @@
 //using CVFPDataAccess.Data;
 
+using CVFPAPI.Extensions.Services;
 using CVFPDataAccess.Data;
 using CVFPDataAccess.Repositories.Candidates;
 using CVFPDataAccess.Repositories.Certifications;
@@ -27,44 +28,34 @@ builder.Services.AddSwaggerGen();
 #region Injection
 
 #region Candidates
-builder.Services.AddScoped<ICandidatesService, CandidatesService>();
-builder.Services.AddScoped<ICandidatesRepository, CandidatesRepository>();
+builder.Services.AddCandidateServices();
 #endregion
 #region Certifications Formations
-builder.Services.AddScoped<ICertificationsFormationsService, CertificationsFormationsService>();
-builder.Services.AddScoped<ICertificationsRepository, CertificationsRepository>();
-builder.Services.AddScoped<IFormationsRepository, FormationsRepository>();
+builder.Services.AddCertificationsFormationsServices();
 #endregion
 
 #region Candidate Skills
-builder.Services.AddScoped<ICandidateSkillsService, CandidateSkillsService>();
-builder.Services.AddScoped<ISoftSkillsRepository, SoftSkillsRepository>();
-builder.Services.AddScoped<IHardSkillsRepository, HardSkillsRepository>();
+builder.Services.AddCandidateSkillsServices();
 #endregion
 
 #region Candidate Hobbies
-builder.Services.AddScoped<ICandidateHobbiesService, CandidateHobbiesService>();
-builder.Services.AddScoped<IHobbiesRepository, HobbiesRepository>();
+builder.Services.AddCandidateHobbiesServices();
 #endregion
 
 #region Candidate Languages
-builder.Services.AddScoped<ICandidateLanguagesService, CandidateLanguagesService>();
-builder.Services.AddScoped<ILanguagesRepository, LanguagesRepository>();
+builder.Services.AddCandidateLanguagesServices();
 #endregion
 
 #region Candidate Experiences
-builder.Services.AddScoped<IExperiencesService, ExperiencesService>();
-builder.Services.AddScoped<IExperiencesRepository, ExperiencesRepository>();
+builder.Services.AddExperiencesServices();
 #endregion
 
 #region JobTasks
-builder.Services.AddScoped<IJobTasksService, JobTasksService>();
-builder.Services.AddScoped<IJobTasksRepository, JobTasksRepository>();
+builder.Services.AddJobTasksServices();
 #endregion
 
 #region ExperienceSkills
-builder.Services.AddScoped<IExperienceSkillsService, ExperienceSkillsService>();
-builder.Services.AddScoped<IExperienceSkillsRepository, ExperienceSkillsRepository>();
+builder.Services.AddExperienceSkillsServices();
 #endregion
 
 builder.Configuration.AddJsonFile("appsettings.json",
