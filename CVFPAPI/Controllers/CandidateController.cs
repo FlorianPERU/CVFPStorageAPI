@@ -6,12 +6,12 @@ namespace CVFPAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class GetFirstCandidateController : ControllerBase
+    public class CandidateController : ControllerBase
     {
 
-        private readonly ILogger<GetFirstCandidateController> _logger;
+        private readonly ILogger<CandidateController> _logger;
         private readonly ICandidatesService _candidatesService;
-        public GetFirstCandidateController(ILogger<GetFirstCandidateController> logger, ICandidatesService candidatesService)
+        public CandidateController(ILogger<CandidateController> logger, ICandidatesService candidatesService)
         {
             _logger = logger;
             _candidatesService = candidatesService;
