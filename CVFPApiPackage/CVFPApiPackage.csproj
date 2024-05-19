@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>CVFP.APIClient</PackageId>
+    <Title>CVFP.APIClient</Title>
+    <Version>0.1.8-alpha</Version>
+    <Authors>Florian PERU</Authors>
+    <Description>A client library for accessing the CVFPAPI controllers.</Description>
+    <PackageProjectUrl>https://github.com/FlorianPERU/CVFPStorageAPI</PackageProjectUrl>
+    <PackageTags>webapi;dotnet;api;nuget;cvfp;cvfpapi;</PackageTags>
+    <PackageReleaseNotes></PackageReleaseNotes>
+	<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0-preview.3.24172.9" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.0-preview.3.24172.9" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<!--<ProjectReference Include="..\CVFPCommon\CVFPCommon.csproj">
+			<ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+			<IncludeAssets>CVFPCommon.dll</IncludeAssets>
+		</ProjectReference>
+		<ProjectReference Include="..\CVFPServices\CVFPServices.csproj">
+			<ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+			<IncludeAssets>CVFPServices.dll</IncludeAssets>
+		</ProjectReference>-->
+		<ProjectReference
+		   Include="..\CVFPCommon\CVFPCommon.csproj"
+		   PrivateAssets="all" />
+		<ProjectReference
+		   Include="..\CVFPServices\CVFPServices.csproj"
+		   PrivateAssets="all" />
+	</ItemGroup>
+	<Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
+		<ItemGroup>
+			<BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" />
+		</ItemGroup>
+	</Target>
+
+</Project>

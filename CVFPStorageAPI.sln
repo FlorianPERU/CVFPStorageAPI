@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CVFPDataAccess", "CVFPDataA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CVFPServices", "CVFPServices\CVFPServices.csproj", "{A9B98C8E-060F-4534-B9CB-76D2FBEE6AB4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVFPApiPackage", "CVFPApiPackage\CVFPApiPackage.csproj", "{A54D15D0-9CCA-4648-97F8-EA0492628EB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVFPCommon", "CVFPCommon\CVFPCommon.csproj", "{122F2DB4-5E31-470C-9F2E-B662C765039D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{A9B98C8E-060F-4534-B9CB-76D2FBEE6AB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9B98C8E-060F-4534-B9CB-76D2FBEE6AB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9B98C8E-060F-4534-B9CB-76D2FBEE6AB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A54D15D0-9CCA-4648-97F8-EA0492628EB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A54D15D0-9CCA-4648-97F8-EA0492628EB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A54D15D0-9CCA-4648-97F8-EA0492628EB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A54D15D0-9CCA-4648-97F8-EA0492628EB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{122F2DB4-5E31-470C-9F2E-B662C765039D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{122F2DB4-5E31-470C-9F2E-B662C765039D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{122F2DB4-5E31-470C-9F2E-B662C765039D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{122F2DB4-5E31-470C-9F2E-B662C765039D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

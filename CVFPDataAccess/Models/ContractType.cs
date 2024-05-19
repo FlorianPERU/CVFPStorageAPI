@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CVFPCommon.Enum;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -16,12 +17,5 @@ namespace CVFPDataAccess.Models
         public ContractTypeEnum Type { get; set; }
         public required virtual ICollection<Experience> Experiences { get; set; }
 
-    }
-    public enum ContractTypeEnum
-    {
-        CDI,
-        CDD,
-        Mission,
-        Alternance
     }
 }

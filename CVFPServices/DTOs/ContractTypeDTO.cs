@@ -1,4 +1,4 @@
-﻿using CVFPDataAccess.Models;
+﻿using CVFPCommon.Enum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

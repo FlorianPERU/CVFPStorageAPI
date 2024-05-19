@@ -1,5 +1,4 @@
-﻿using CVFPDataAccess.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -10,7 +9,13 @@ namespace CVFPServices.DTOs
 {
     public class CandidateSkillsDTO
     {
-        public required List<SoftSkillDTO> SoftSkills { get; set; }
-        public required List<HardSkillDTO> HardSkills { get; set; }
+        public CandidateSkillsDTO()
+        {
+            SoftSkills = new List<SoftSkillDTO>();
+            HardSkills = new List<HardSkillDTO>();
+        }
+
+        public List<SoftSkillDTO> SoftSkills { get; set; }
+        public List<HardSkillDTO> HardSkills { get; set; }
     }
 }

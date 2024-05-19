@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CVFPCommon.Enum;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -53,15 +54,5 @@ namespace CVFPDataAccess.Models
         public virtual required ICollection<AssociationCandidateHardSkill> AssociationCandidateHardSkills { get; set; }
         public virtual required ICollection<AssociationCandidateHobbie> AssociationCandidateHobbies { get; set; }
         public virtual required ICollection<AssociationCandidateLanguage> AssociationCandidateLanguages { get; set; }
-    }
-
-    public enum DrivingLicenseTypeEnum
-    {
-        A,
-        A1,
-        A2,
-        B,
-        B1,
-        BE
     }
 }

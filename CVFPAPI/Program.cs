@@ -2,16 +2,6 @@
 
 using CVFPAPI.Extensions.Services;
 using CVFPDataAccess.Data;
-using CVFPDataAccess.Repositories.Candidates;
-using CVFPDataAccess.Repositories.Certifications;
-using CVFPDataAccess.Repositories.Experiences;
-using CVFPDataAccess.Repositories.ExperienceSkills;
-using CVFPDataAccess.Repositories.Formations;
-using CVFPDataAccess.Repositories.HardSkills;
-using CVFPDataAccess.Repositories.Hobbies;
-using CVFPDataAccess.Repositories.JobTasks;
-using CVFPDataAccess.Repositories.Languages;
-using CVFPDataAccess.Repositories.SoftSkills;
 using CVFPServices.Services;
 using CVFPServices.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
